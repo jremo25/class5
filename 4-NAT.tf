@@ -11,8 +11,11 @@ resource "aws_nat_gateway" "nat" {
   subnet_id     = aws_subnet.public_eu_west_1a.id
 
   tags = {
-    Name = "nat"
+    Name    = "app1_nat"
+    Service = "application1"
+    Owner   = "Chewbacca"
+    Planet  = "Mustafar"
   }
 
-  depends_on = [aws_internet_gateway.igw]
+  depends_on = [aws_internet_gateway.app1_igw]
 }
